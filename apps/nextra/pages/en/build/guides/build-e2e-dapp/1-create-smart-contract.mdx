@@ -527,7 +527,7 @@ Test result: OK. Total tests: 1; passed: 1; failed: 0
 
 ```move filename="todolist.move"
 #[test(admin = @0x123)]
-#[expected_failure(abort_code = E_NOT_INITIALIZED)]
+#[expected_failure(abort_code = ETASK_DOESNT_EXIST)]
 public entry fun account_can_not_update_task(admin: signer) acquires TodoList {
   // creates an admin @todolist_addr account for test
   account::create_account_for_test(signer::address_of(&admin));
